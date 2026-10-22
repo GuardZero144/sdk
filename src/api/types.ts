@@ -4,7 +4,7 @@ export type Metadata = Record<string, unknown>;
 
 export interface LoginRequest {
   walletAddress: string;
-  /** Base64 or hex signature of `message`, produced by the user's Stellar wallet. */
+  /** Base64 ed25519 signature over the raw UTF-8 bytes of `message`, made with the wallet's key. */
   signature: string;
   message: string;
 }
